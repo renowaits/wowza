@@ -1,5 +1,4 @@
 import { epoxyPath } from '@mercuryworkshop/epoxy-transport';
-import { uvPath } from '@titaniumnetwork-dev/ultraviolet';
 import { baremuxPath } from '@mercuryworkshop/bare-mux';
 import wisp from 'wisp-server-node';
 import express from 'express';
