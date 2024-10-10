@@ -21,7 +21,6 @@ const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 const packageFile = JSON.parse(fs.readFileSync(path.join(__dirname, '../package.json')));
 
 const swPaths = [
-    '/uv/sw.js',
     '/assets/js/offline.js'
 ];
 
@@ -115,11 +114,6 @@ app.use(async (req, res, next) => {
     }
 });
 
-app.use('/uv/', express.static(uvPath, {
-    setHeaders: (res, path) => {
-        if (path.endsWith('.cjs')) res.setHeader('Content-Type', 'text/javascript');
-    }
-}));
 app.use('/epoxy/', express.static(epoxyPath, {
     setHeaders: (res, path) => {
         if (path.endsWith('.cjs')) res.setHeader('Content-Type', 'text/javascript');
